@@ -7,6 +7,7 @@
 
 <body>
 	<h1>Master Add</h1>
+	<h1>Master Add2</h1>
 <h1>
 	Hello world!  
 </h1>
