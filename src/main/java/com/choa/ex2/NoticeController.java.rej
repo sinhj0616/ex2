@@ -1,0 +1,14 @@
+diff a/src/main/java/com/choa/ex2/NoticeController.java b/src/main/java/com/choa/ex2/NoticeController.java	(rejected hunks)
+@@ -24,6 +24,12 @@
+ 	@Inject  //type
+ 	private NoticeService noticeService;
+ 	
++	@RequestMapping(value="test")
++	public void test(){
++		System.out.println(noticeService);
++		noticeService.test();
++	}
++	
+ 	@RequestMapping(value="NoticeList" , method=RequestMethod.GET)
+ 	public void NoticeList(Model model, @RequestParam(defaultValue="1")Integer curPage)throws Exception{
+ 		List<NoticeDTO> ar =noticeService.noticeList(curPage);
