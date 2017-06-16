@@ -9,6 +9,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.choa.util.DBConnect;
@@ -18,7 +19,7 @@ import com.choa.util.RowMaker;
 // Notice noticeDao =new NoticeDAO(); 와 같은 것 
 public class NoticeDAO {
 
-	@Inject
+	@Autowired
 	private DataSource dataSource;
 	
 	

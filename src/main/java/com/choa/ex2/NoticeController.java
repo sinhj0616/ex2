@@ -24,6 +24,12 @@ public class NoticeController {
 	@Inject  //type
 	private NoticeService noticeService;
 	
+	@RequestMapping(value="test")
+	public void test(){
+		System.out.println(noticeService);
+		noticeService.test();
+	}
+	
 	@RequestMapping(value="NoticeList" , method=RequestMethod.GET)
 	public void NoticeList(Model model, @RequestParam(defaultValue="1")Integer curPage)throws Exception{
 		List<NoticeDTO> ar =noticeService.noticeList(curPage);
@@ -42,7 +48,10 @@ public class NoticeController {
 	}
 	//writeForm
 	@RequestMapping(value="NoticeWrite" , method=RequestMethod.GET)
-	public void NoticeWrite(){}
+	public void NoticeWrite(Model model){
+		
+		model.addAttribute("path", "Write");
+	}
 	
 	
 	//write
@@ -59,9 +68,11 @@ public class NoticeController {
 	}
 	//updateForm
 		@RequestMapping(value="NoticeUpdate", method=RequestMethod.GET)
-		public void noticeUpdate(Integer num, Model model) throws Exception{
+		public String noticeUpdate(Integer num, Model model) throws Exception{
 			NoticeDTO noticeDTO = noticeService.noticeView(num);
 			model.addAttribute("dto", noticeDTO);
+			model.addAttribute("path", "Update");
+			return "notice/NoticeWrite";
 		}
 	
 	

@@ -2,7 +2,17 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- notice service 조립할수 있는 코드쳐라  -->
 	
-	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	
+	<!-- DB 연결  -->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="datasource">
+		<property name="username" value="user03"/>
+		<property name="password" value="user03"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+	</bean>
+	
+	
+	
 </beans>

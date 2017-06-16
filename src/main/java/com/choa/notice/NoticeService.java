@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.choa.util.PageMaker;
@@ -14,8 +16,14 @@ import com.choa.util.PageMaker;
 //@Service의 의미 : Notice noticeDao =new NoticeDAO(); 와 같은 것 
 public class NoticeService {
 	
-	@Inject
+	
+	
+	@Qualifier
 	private NoticeDAO noticeDAO;
+	
+	public void test(){
+		System.out.println(noticeDAO);
+	}
 	
 	
 	/*//생성자(Constructor) 방식
